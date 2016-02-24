@@ -7,10 +7,15 @@ In order to get things working
 * cp -r /vagrant/configs ~/
 * cp /vagrant/setup.sh ~/
 * chmod +x setup.sh
-* ./setup.sh
+* sudo ./setup.sh
+* exit
 
-Am not using bootstrapping the images since the downloads often fail. You can comment out the download step in the script if all downloads are completed and yo u wish to makes ome changes to the install script.
+Download of all needed files is from our local network(FTP), so it`ll work only in office..
 
+on local machine
+All services run on 192.168.43.43:port
+DataNode on 192.168.43.43:50075
+NameNode WebUI on 192.168.43.43:50070
 
-
-
+Hive CLI
+vagrant ssh and just type hive
