@@ -6,11 +6,11 @@ HADOOP_ARCHIVE=hadoop-2.7.1.tar.gz
 JAVA_ARCHIVE=jdk-7u51-linux-x64.tar.gz
 MAHOUT_ARCHIVE=apache-mahout-distribution-0.11.1.tar.gz
 HIVE_ARCHIVE=apache-hive-1.2.1-bin.tar.gz
-HADOOP_MIRROR_DOWNLOAD=http://www.us.apache.org/dist/hadoop/common/hadoop-2.7.1/hadoop-2.7.1.tar.gz
-HIVE_MIRROR_DOWNLOAD=http://www.eu.apache.org/dist/hive/stable/apache-hive-1.2.1-bin.tar.gz
-PIG_MIRROR_DOWNLOAD=http://www.eu.apache.org/dist/pig/latest/pig-0.15.0.tar.gz
-JAVA_MIRROR_DOWNLOAD=https://www.reucon.com/cdn/java/jdk-7u51-linux-x64.tar.gz
-MAHOUT_MIRROR_DOWNLOAD=http://www.eu.apache.org/dist/mahout/0.11.1/apache-mahout-distribution-0.11.1.tar.gz
+HADOOP_MIRROR_DOWNLOAD=ftp://192.168.1.1/SHARE/SHAREDsoftware/hadoop-2.7.1.tar.gz
+HIVE_MIRROR_DOWNLOAD=ftp://192.168.1.1/SHARE/SHAREDsoftware/apache-hive-1.2.1-bin.tar.gz
+PIG_MIRROR_DOWNLOAD=ftp://192.168.1.1/SHARE/SHAREDsoftware/pig-0.15.0.tar.gz
+JAVA_MIRROR_DOWNLOAD=ftp://192.168.1.1/SHARE/SHAREDsoftware/jdk-7u51-linux-x64.tar.gz
+MAHOUT_MIRROR_DOWNLOAD=ftp://192.168.1.1/SHARE/SHAREDsoftware/apache-mahout-distribution-0.11.1.tar.gz
 
 function downloadPackages {
 	mkdir install_packages
@@ -29,6 +29,7 @@ function installLocalJava {
 	FILE=~/install_packages/$JAVA_ARCHIVE
 	tar -xzf $FILE -C /usr/local
 	ln -s /usr/local/jdk1.7.0_51/ /usr/local/java
+        ln -s /usr/local/jdk1.7.0_51/bin/jps /usr/bin/jps
 	echo export JAVA_HOME=/usr/local/java >> ~/.bashrc
 }
 
@@ -143,10 +144,3 @@ setupHive
 #HADOOP_PREFIX=/usr/local/hadoop
 #JAVA_HOME=/usr/local/java
 #export PATH=$PATH:/usr/local/hive
-
-
-
-
-
-
-
