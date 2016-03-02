@@ -1,6 +1,13 @@
 Bog standard Ubuntu Trusty with a script to install hadoop and hive.
 
 
+Before you run please check the setup.sh script which sets things up. You have 2 options
+* Use an internal mirror
+* Use an external mirror
+
+The function list is at the end of the file. For internal use downloadInternalPackages and for external use downloadExternalPackages
+
+
 In order to get things working
 * vagrant up
 * vagrant ssh
